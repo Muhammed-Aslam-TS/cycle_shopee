@@ -1,0 +1,64 @@
+<main class="main" id="main">
+    <section>
+
+        <div class="container">
+            <b> <H1 class="fw-bold text-center">Add New Products</H1></b>
+            <form action="/admin/addProduct" enctype="multipart/form-data" method="post">
+                <div class="form-group">
+                    <label for="exampleInputEmail1">Brand Name</label>
+                    <input type="text" class="form-control" name="Name" id="exampleInputName"
+                        aria-describedby="NameHelp" placeholder="Name">
+                </div><br>
+                  <div class="form-group">
+                    <label for="exampleInputPrice">Stock</label>
+                    <input type="text" class="form-control" name="Stock" id="exampleInputStock" placeholder="Stock">
+                </div><br>
+                <div class="form-group">
+                    <label for="exampleInputPrice">Price</label>
+                    <input type="number" class="form-control" name="Price" id="exampleInputPrice" placeholder="Price">
+                </div><br>
+                {{!-- <div class="form-group">
+                    <label for="exampleInputPrice">Offer Price (%)</label>
+                    <input type="text" class="form-control" name="ProductOffer" id="exampleInputOffer" placeholder="Offer Price">
+                </div><br> --}}
+                <div>
+                    <label for="floatingSelect">Category</label>
+                    <div class="form-floating mb-3">
+                        <select class="form-select" id="floatingSelect" aria-label="Floating label select example"
+                            name="addCategory">
+                            {{#each categoryName}}
+                            <option value={{this.CategoryName}}>{{this.CategoryName}}</option>
+                            <option value="1"></option>
+                            {{/each}}
+                        </select>
+
+                    </div><br>
+                </div>
+                <div class="form-group">
+                    <label for="">Description</label>
+                    <input type="text" class="form-control" name="Description" id="exampleInputDescription"
+                        aria-describedby="DescriptionHelp" placeholder="Description">
+                </div><br>
+                <div class="form-group">
+                    <label for="">Image</label>
+                    <input type="file" class="form-control" name="Image" id="exampleInputfile" multiple="multiple"
+                        aria-describedby="fileHelp" placeholder="">
+                </div><br>
+
+                <button onclick="hello()" type="submit" class="btn btn-success">Submit</button>
+            </form>
+        </div>
+    </section>
+</main>
+
+<script>
+  function hello() {
+    Swal.fire(
+      'Product aded',
+      'God job',
+      'success'
+    ).then(() => {
+
+    })
+  }
+</script>
